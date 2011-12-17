@@ -137,9 +137,9 @@ namespace AstroPanel
 
         #region ApplicationBar
 
-        private void About_Click(object sender, EventArgs e)
+        private void Settings_Click(object sender, EventArgs e)
         {
-            NavigationService.Navigate(new Uri("/AboutPage.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/SettingsPage.xaml", UriKind.Relative));
         }
 
         private void Help_Click(object sender, EventArgs e)
@@ -147,6 +147,11 @@ namespace AstroPanel
             string title = "Help";
             string text = "To get an explanation about the data click on one of the row names to view it.";
             MessageBox.Show(text, title, MessageBoxButton.OK);
+        }
+
+        private void About_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/AboutPage.xaml", UriKind.Relative));
         }
 
         #endregion
