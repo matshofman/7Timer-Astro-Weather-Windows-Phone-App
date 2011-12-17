@@ -1,0 +1,198 @@
+﻿<phone:PhoneApplicationPage xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone" xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone" xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:es="clr-namespace:Microsoft.Expression.Shapes;assembly=Microsoft.Expression.Drawing" xmlns:em="clr-namespace:Microsoft.Expression.Media;assembly=Microsoft.Expression.Drawing" xmlns:AstroPanel_Data="clr-namespace:AstroPanel.Data" xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" 
+    x:Class="AstroPanel.MainPage"
+    d:DesignWidth="480" d:DesignHeight="768"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" shell:SystemTray.Opacity="0.00" mc:Ignorable="d">
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <phone:PhoneApplicationPage.Resources>
+    	<Style x:Key="HyperlinkButtonStyle" TargetType="HyperlinkButton">
+    		<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+    		<Setter Property="Background" Value="Transparent"/>
+    		<Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMedium}"/>
+    		<Setter Property="Padding" Value="0"/>
+    		<Setter Property="Template">
+    			<Setter.Value>
+    				<ControlTemplate TargetType="HyperlinkButton">
+    					<Border Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top">
+    						<VisualStateManager.VisualStateGroups>
+    							<VisualStateGroup x:Name="CommonStates">
+    								<VisualState x:Name="Normal"/>
+    								<VisualState x:Name="MouseOver"/>
+    								<VisualState x:Name="Pressed">
+    									<Storyboard>
+    										<DoubleAnimation Duration="0" To="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="TextElement"/>
+    									</Storyboard>
+    								</VisualState>
+    								<VisualState x:Name="Disabled">
+    									<Storyboard>
+    										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="TextElement">
+    											<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}"/>
+    										</ObjectAnimationUsingKeyFrames>
+    									</Storyboard>
+    								</VisualState>
+    							</VisualStateGroup>
+    						</VisualStateManager.VisualStateGroups>
+    						<TextBlock x:Name="TextElement" Text="{TemplateBinding Content}" TextDecorations="Underline" Style="{StaticResource PhoneTextNormalStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0"/>
+    					</Border>
+    				</ControlTemplate>
+    			</Setter.Value>
+    		</Setter>
+    	</Style>
+		<Style x:Key="Header" TargetType="ListBox">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+			<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+			<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+			<Setter Property="BorderThickness" Value="0"/>
+			<Setter Property="BorderBrush" Value="Transparent"/>
+			<Setter Property="Padding" Value="0"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="ListBox">
+						<ScrollViewer x:Name="ScrollViewer" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Foreground="{TemplateBinding Foreground}" Padding="{TemplateBinding Padding}">
+                        	<StackPanel Orientation="Horizontal">
+								<StackPanel Margin="0">
+									<Border BorderThickness="1" Margin="6,82,6,6" Height="64" BorderBrush="{StaticResource PhoneAccentBrush}">
+										<HyperlinkButton Content="Cloud Cover" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
+									</Border>
+									<Border BorderThickness="1" Margin="6" Height="64" BorderBrush="{StaticResource PhoneAccentBrush}">
+										<HyperlinkButton Content="Seeing" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
+									</Border>
+									<Border BorderThickness="1" Margin="6" Height="64" BorderBrush="{StaticResource PhoneAccentBrush}">
+										<HyperlinkButton Content="Transparency" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
+									</Border>
+									<Border BorderThickness="1" Margin="6" Height="64" BorderBrush="{StaticResource PhoneAccentBrush}">
+										<HyperlinkButton Content="Temperature" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
+									</Border>
+									<Border BorderThickness="1" Margin="6" Height="64" BorderBrush="{StaticResource PhoneAccentBrush}">
+										<HyperlinkButton Content="Humidity" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
+									</Border>
+									<Border BorderThickness="1" Margin="6" Height="64" BorderBrush="{StaticResource PhoneAccentBrush}">
+										<HyperlinkButton Content="Precipitation" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
+									</Border>
+									<Border BorderThickness="1" Margin="6" Height="64" BorderBrush="{StaticResource PhoneAccentBrush}">
+										<HyperlinkButton Content="Wind" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
+									</Border>
+								</StackPanel>
+	                            <ItemsPresenter/>
+                            </StackPanel>
+						</ScrollViewer>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</phone:PhoneApplicationPage.Resources>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent" d:DataContext="{d:DesignData /SampleData/WeatherDataSampleData.xaml}" Margin="0">
+        <Grid.RowDefinitions>
+        	<RowDefinition Height="147"/>
+        	<RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="7TIMER ASTRO WEATHER" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Forecast" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+        <Grid Margin="12,0" Grid.Row="1" d:LayoutOverrides="Height">
+        	<ListBox x:Name="SkyListBox" ItemsSource="{Binding WeatherFragments}" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="auto" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalContentAlignment="Bottom" d:LayoutOverrides="HorizontalAlignment" Style="{StaticResource Header}">
+        		<ListBox.ItemsPanel>
+        			<ItemsPanelTemplate>
+        				<StackPanel Orientation="Horizontal"/>
+        			</ItemsPanelTemplate>
+        		</ListBox.ItemsPanel>
+        		<ListBox.ItemTemplate>
+        			<DataTemplate>
+        				<StackPanel Orientation="Horizontal">
+                            <TextBlock TextWrapping="Wrap" Text="{Binding DateString}" HorizontalAlignment="Left" VerticalAlignment="Top" UseLayoutRounding="False" d:LayoutRounding="Auto" Margin="-275,60,5,0" Height="25" RenderTransformOrigin="1,1" Width="300" TextAlignment="Right" Style="{StaticResource PhoneTextSmallStyle}" Visibility="{Binding DateVisible}">
+        						<TextBlock.RenderTransform>
+        							<CompositeTransform Rotation="-90"/>
+        						</TextBlock.RenderTransform>
+        					</TextBlock>
+        					<StackPanel Margin="0">
+        						<Border BorderThickness="1" Margin="6" HorizontalAlignment="Left" Width="64" Height="64" BorderBrush="{StaticResource PhoneAccentBrush}">
+        							<TextBlock Text="{Binding TimePoint}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" Margin="-1" RenderTransformOrigin="1.559,0.558" TextAlignment="Center" VerticalAlignment="Center"/>
+        						</Border>
+        						<Border BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="1" Margin="6" HorizontalAlignment="Left" Width="64" Background="{StaticResource PhoneAccentBrush}" Height="64">
+        							<Canvas>
+                                        <es:Arc ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Stretch="None" Stroke="Black" UseLayoutRounding="False" Fill="#FF006BA3" StrokeThickness="0" Width="46" Height="46" Canvas.Left="9" Canvas.Top="9" Canvas.ZIndex="2" StartAngle="{Binding CloudCoverDegrees}"/>
+        								<es:Arc ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Stretch="None" Stroke="Black" UseLayoutRounding="False" Fill="White" Width="48" Height="48" Canvas.Left="8" Canvas.Top="8" Canvas.ZIndex="1"/>
+        							</Canvas>
+        						</Border>
+        						<Border BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="1" Margin="6" HorizontalAlignment="Left" Width="64" Background="{StaticResource PhoneAccentBrush}" Height="64">
+        							<Ellipse Fill="{Binding SeeingColor}" Stroke="Black" StrokeThickness="1" Margin="8" HorizontalAlignment="Center" VerticalAlignment="Center" Width="{Binding SeeingCircleSize}" Height="{Binding SeeingCircleSize}"/>
+        						</Border>
+        						<Border BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="1" Margin="6" HorizontalAlignment="Left" Width="64" Background="{StaticResource PhoneAccentBrush}" Height="64">
+        							<StackPanel Margin="6,0" VerticalAlignment="Center">
+                                        <Rectangle Fill="{Binding TransparencyColor}" Visibility="{Binding TransparencyBar1}" Height="5" Stroke="Black" Margin="0,1" VerticalAlignment="Center"/>
+        								<Rectangle Fill="{Binding TransparencyColor}" Visibility="{Binding TransparencyBar2}" Height="5" Stroke="Black" Margin="0,1" VerticalAlignment="Center"/>
+        								<Rectangle Fill="{Binding TransparencyColor}" Visibility="{Binding TransparencyBar3}" Height="5" Stroke="Black" Margin="0,1" VerticalAlignment="Center"/>
+        								<Rectangle Fill="{Binding TransparencyColor}" Visibility="{Binding TransparencyBar4}" Height="5" Stroke="Black" Margin="0,1" VerticalAlignment="Center"/>
+        								<Rectangle Fill="{Binding TransparencyColor}" Visibility="{Binding TransparencyBar5}" Height="5" Stroke="Black" Margin="0,1" VerticalAlignment="Center"/>
+        								<Rectangle Fill="{Binding TransparencyColor}" Visibility="{Binding TransparencyBar6}" Height="5" Stroke="Black" Margin="0,1" VerticalAlignment="Center"/>
+        								<Rectangle Fill="{Binding TransparencyColor}" Visibility="{Binding TransparencyBar7}" Height="5" Stroke="Black" Margin="0,1" VerticalAlignment="Center"/>
+        								<Rectangle Fill="{Binding TransparencyColor}" Visibility="{Binding TransparencyBar8}" Height="5" Stroke="Black" Margin="0,1" VerticalAlignment="Center"/>
+        							</StackPanel>
+        						</Border>
+        						<Border BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="1" Margin="6" HorizontalAlignment="Left" Width="64" Background="{StaticResource PhoneAccentBrush}" Height="64">
+        							<TextBlock Text="{Binding TemperatureString}" TextWrapping="Wrap" Style="{StaticResource PhoneTextNormalStyle}" Margin="-1" RenderTransformOrigin="1.559,0.558" TextAlignment="Center" VerticalAlignment="Center"/>
+        						</Border>
+        						<Border BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="1" Margin="6" HorizontalAlignment="Left" Width="64" Background="{StaticResource PhoneAccentBrush}" Height="64">
+        							<TextBlock Text="{Binding HumidityPercentage}" TextWrapping="Wrap" Style="{StaticResource PhoneTextNormalStyle}" Margin="-1" RenderTransformOrigin="1.559,0.558" TextAlignment="Center" VerticalAlignment="Center"/>
+        						</Border>
+        						<Border BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="1" Margin="6" HorizontalAlignment="Left" Width="64" Background="{StaticResource PhoneAccentBrush}" Height="64">
+        							<Image Source="{Binding PrecipitationImageUrl}" Margin="6"/>
+        						</Border>
+        						<Border BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="1" Margin="6" HorizontalAlignment="Left" Width="64" Background="{StaticResource PhoneAccentBrush}" Height="64">
+                                    <es:BlockArrow Fill="{Binding Wind.SpeedColor}" Orientation="Up" Stroke="{StaticResource PhoneChromeBrush}" UseLayoutRounding="False" Height="{Binding Wind.SpeedArrowSize}" RenderTransformOrigin="0.5,0.5" Width="{Binding Wind.SpeedArrowSize}">
+        								<es:BlockArrow.RenderTransform>
+        									<CompositeTransform Rotation="{Binding Wind.DirectionDegrees}"/>
+        								</es:BlockArrow.RenderTransform>
+        							</es:BlockArrow>
+        						</Border>
+        					</StackPanel>
+        				</StackPanel>
+        			</DataTemplate>
+        		</ListBox.ItemTemplate>
+        	</ListBox>
+        </Grid>
+        <ProgressBar x:Name="ProgressBar" IsIndeterminate="True" Grid.Row="1" VerticalAlignment="Center" d:IsHidden="True"/>
+        <TextBlock x:Name="LoadingText" TextWrapping="Wrap" Grid.Row="1" Style="{StaticResource PhoneTextSmallStyle}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="12,50,12,0" d:IsHidden="True"/>
+
+        <!--ContentPanel - place additional content here-->
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="False" IsMenuEnabled="True" Mode="Minimized">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Settings"/>
+                <shell:ApplicationBarMenuItem Click="Help_Click"  Text="Help"/>
+                <shell:ApplicationBarMenuItem Click="About_Click"  Text="About"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

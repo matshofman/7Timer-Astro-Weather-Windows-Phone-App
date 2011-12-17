@@ -1,0 +1,54 @@
+﻿<AstroPanel_Data:WeatherData xmlns:AstroPanel_Data="clr-namespace:AstroPanel.Data" InitializeDateTime="12/13/2011 22:27:10" InitializeTime="Aliquam integer vestibulum" Product="Curabitur class aenean cras">
+	<AstroPanel_Data:WeatherData.WeatherFragments>
+		<AstroPanel_Data:WeatherFragment CloudCover="51" CloudCoverDegrees="65" Humidity="14" HumidityPercentage="90%" LiftedIndex="63" Precipitation="snow" PrecipitationImageUrl="Images/rain.png" SeeingCircleSize="25" SeeingColor="#FF8DD3C7" Seeing="35" TimePoint="68" Temperature="61" TimePointBase="16" TemperatureString="7°C" Transparency="33">
+			<AstroPanel_Data:WeatherFragment.Wind>
+                <AstroPanel_Data:WindData Direction="SW" Speed="25" DirectionDegrees="0" SpeedArrowSize="20"/>
+			</AstroPanel_Data:WeatherFragment.Wind>
+		</AstroPanel_Data:WeatherFragment>
+        <AstroPanel_Data:WeatherFragment CloudCover="74" CloudCoverDegrees="55" Humidity="94" HumidityPercentage="100%" LiftedIndex="44" Precipitation="none" PrecipitationImageUrl="Images/snow.png" SeeingCircleSize="23" SeeingColor="#FFFFFFB3" Seeing="29" TimePoint="98" Temperature="67" TimePointBase="59" TemperatureString="5°C" Transparency="12">
+			<AstroPanel_Data:WeatherFragment.Wind>
+                <AstroPanel_Data:WindData Direction="SE" Speed="80" DirectionDegrees="45" SpeedArrowSize="30"/>
+			</AstroPanel_Data:WeatherFragment.Wind>
+		</AstroPanel_Data:WeatherFragment>
+        <AstroPanel_Data:WeatherFragment CloudCover="64" CloudCoverDegrees="68" Humidity="69" HumidityPercentage="85%" LiftedIndex="99" Precipitation="none" PrecipitationImageUrl="" SeeingCircleSize="35" SeeingColor="#FFBEBADA" Seeing="84" TimePoint="40" Temperature="32" TimePointBase="30" TemperatureString="3°C" Transparency="63">
+			<AstroPanel_Data:WeatherFragment.Wind>
+                <AstroPanel_Data:WindData Direction="E" Speed="42" DirectionDegrees="90" SpeedArrowSize="35"/>
+			</AstroPanel_Data:WeatherFragment.Wind>
+		</AstroPanel_Data:WeatherFragment>
+        <AstroPanel_Data:WeatherFragment CloudCover="14" CloudCoverDegrees="31" Humidity="14" HumidityPercentage="75%" LiftedIndex="18" Precipitation="snow" PrecipitationImageUrl="" SeeingCircleSize="31" SeeingColor="#FFFB8072" Seeing="57" TimePoint="24" Temperature="30" TimePointBase="64" TemperatureString="1°C" Transparency="92">
+			<AstroPanel_Data:WeatherFragment.Wind>
+                <AstroPanel_Data:WindData Direction="SW" Speed="17" DirectionDegrees="90" SpeedArrowSize="30"/>
+			</AstroPanel_Data:WeatherFragment.Wind>
+		</AstroPanel_Data:WeatherFragment>
+        <AstroPanel_Data:WeatherFragment CloudCover="30" CloudCoverDegrees="30" Humidity="85" HumidityPercentage="100%" LiftedIndex="43" Precipitation="none" PrecipitationImageUrl="" SeeingCircleSize="41" SeeingColor="#FF80B1D3" Seeing="15" TimePoint="73" Temperature="62" TimePointBase="35" TemperatureString="-12°C" Transparency="40">
+			<AstroPanel_Data:WeatherFragment.Wind>
+                <AstroPanel_Data:WindData Direction="W" Speed="66" DirectionDegrees="45" SpeedArrowSize="25"/>
+			</AstroPanel_Data:WeatherFragment.Wind>
+		</AstroPanel_Data:WeatherFragment>
+        <AstroPanel_Data:WeatherFragment CloudCover="71" CloudCoverDegrees="10" Humidity="45" HumidityPercentage="90%" LiftedIndex="94" Precipitation="rain" PrecipitationImageUrl="Images/rain.png" SeeingCircleSize="41" SeeingColor="#FFFDB462" Seeing="36" TimePoint="46" Temperature="36" TimePointBase="76" TemperatureString="2°C" Transparency="13">
+			<AstroPanel_Data:WeatherFragment.Wind>
+                <AstroPanel_Data:WindData Direction="SW" Speed="62" DirectionDegrees="180" SpeedArrowSize="45"/>
+			</AstroPanel_Data:WeatherFragment.Wind>
+		</AstroPanel_Data:WeatherFragment>
+        <AstroPanel_Data:WeatherFragment CloudCover="42" CloudCoverDegrees="50" Humidity="72" HumidityPercentage="85%" LiftedIndex="39" Precipitation="rain" PrecipitationImageUrl="Images/rain.png" SeeingCircleSize="66" SeeingColor="#FFB3DE69" Seeing="21" TimePoint="77" Temperature="45" TimePointBase="45" TemperatureString="7°C" Transparency="47">
+			<AstroPanel_Data:WeatherFragment.Wind>
+                <AstroPanel_Data:WindData Direction="NE" Speed="87" DirectionDegrees="0" SpeedArrowSize="20"/>
+			</AstroPanel_Data:WeatherFragment.Wind>
+		</AstroPanel_Data:WeatherFragment>
+        <AstroPanel_Data:WeatherFragment CloudCover="57" CloudCoverDegrees="48" Humidity="48" HumidityPercentage="65%" LiftedIndex="23" Precipitation="snow" PrecipitationImageUrl="" SeeingCircleSize="29" SeeingColor="#FFFCCDE5" Seeing="51" TimePoint="77" Temperature="90" TimePointBase="57" TemperatureString="9°C" Transparency="37">
+			<AstroPanel_Data:WeatherFragment.Wind>
+                <AstroPanel_Data:WindData Direction="SE" Speed="11" DirectionDegrees="0" SpeedArrowSize="20"/>
+			</AstroPanel_Data:WeatherFragment.Wind>
+		</AstroPanel_Data:WeatherFragment>
+        <AstroPanel_Data:WeatherFragment CloudCover="48" CloudCoverDegrees="60" Humidity="14" HumidityPercentage="40%" LiftedIndex="72" Precipitation="snow" PrecipitationImageUrl="Images/rain.png" SeeingCircleSize="94" SeeingColor="#FFD9D9D9" Seeing="62" TimePoint="88" Temperature="89" TimePointBase="28" TemperatureString="17°C" Transparency="26">
+            <AstroPanel_Data:WeatherFragment.Wind>
+                <AstroPanel_Data:WindData Direction="W" Speed="14" DirectionDegrees="0" SpeedArrowSize="20"/>
+            </AstroPanel_Data:WeatherFragment.Wind>
+        </AstroPanel_Data:WeatherFragment>
+        <AstroPanel_Data:WeatherFragment CloudCover="68" CloudCoverDegrees="88" Humidity="45" HumidityPercentage="50%" LiftedIndex="70" Precipitation="none" PrecipitationImageUrl="Images/snow.png" SeeingCircleSize="29" SeeingColor="#FFBC80BD" Seeing="76" TimePoint="37" Temperature="96" TimePointBase="58" TemperatureString="23°C" Transparency="95">
+			<AstroPanel_Data:WeatherFragment.Wind>
+                <AstroPanel_Data:WindData Direction="N" Speed="28" DirectionDegrees="0" SpeedArrowSize="20"/>
+			</AstroPanel_Data:WeatherFragment.Wind>
+		</AstroPanel_Data:WeatherFragment>
+	</AstroPanel_Data:WeatherData.WeatherFragments>
+</AstroPanel_Data:WeatherData>
