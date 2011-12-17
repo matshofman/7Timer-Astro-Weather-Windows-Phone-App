@@ -17,8 +17,6 @@ using System.Device.Location;
 namespace AstroPanel
 {
 
-    // Weather Icons by http://superdit.com/2011/10/13/60-free-mobile-application-style-icon-sets/ MerlinTheRed under the Creative Commons BY-NC-ND 3.0 license
-
     public partial class MainPage : PhoneApplicationPage
     {
         private GeoCoordinateWatcher watcher;
