@@ -82,14 +82,73 @@ namespace AstroPanel
             }
         }
 
-        private void Help_Click(object sender, EventArgs e)
+        #region Help Events
+
+        private void HelpCloudCover_Click(object sender, EventArgs e)
         {
-            NavigationService.Navigate(new Uri("/HelpPage.xaml", UriKind.Relative));
+            string title = "Cloud Cover";
+            string text = "A pie-chart of cloud cover, blue is for clear while white is for clouds. The more blue the better.";
+            MessageBox.Show(text, title, MessageBoxButton.OK);
         }
+
+        private void HelpSeeing_Click(object sender, EventArgs e)
+        {
+            string title = "Astronomical Seeing";
+            string text = "The smaller and bluer the dot, the better the seeing condition is. Astronomical seeing refers to the blurring and twinkling of objects in the sky caused by turbulence in the air.";
+            MessageBox.Show(text, title, MessageBoxButton.OK);
+        }
+
+        private void HelpTransparency_Click(object sender, EventArgs e)
+        {
+            string title = "Transparency";
+            string text = "The atmospheric transparency shown in bars, the bluer and less bars there are the better the transparency is. Basically a bad transparency means you will see less stars because less light will be able to pass through the Earth's atmosphere.";
+            MessageBox.Show(text, title, MessageBoxButton.OK);
+        }
+
+        private void HelpTemperature_Click(object sender, EventArgs e)
+        {
+            string title = "Temperature";
+            string text = "The air temperature at 2 meter or 6 feet in Celcius or Farenheit. This can be adjusted in the settings menu.";
+            MessageBox.Show(text, title, MessageBoxButton.OK);
+        }
+
+        private void HelpHumidity_Click(object sender, EventArgs e)
+        {
+            string title = "Humidity";
+            string text = "The air humidity at 2 meter or 6 feet. There is an increased chance of dew from 80% and higher.";
+            MessageBox.Show(text, title, MessageBoxButton.OK);
+        }
+
+        private void HelpPrecipitation_Click(object sender, EventArgs e)
+        {
+            string title = "Precipitation";
+            string text = "Expected precipitation in the form of rain or snow.";
+            MessageBox.Show(text, title, MessageBoxButton.OK);
+        }
+
+        private void HelpWind_Click(object sender, EventArgs e)
+        {
+            string title = "Wind";
+            string text = "The amount of wind and it's direction. In case the wind is picking up to a fresh breeze or higher the arrow starts to color from yellow to red.";
+            MessageBox.Show(text, title, MessageBoxButton.OK);
+        }
+
+        #endregion
+
+        #region ApplicationBar
 
         private void About_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/AboutPage.xaml", UriKind.Relative));
         }
+
+        private void Help_Click(object sender, EventArgs e)
+        {
+            string title = "Help";
+            string text = "To get an explanation about the data click on one of the row names to view it.";
+            MessageBox.Show(text, title, MessageBoxButton.OK);
+        }
+
+        #endregion
     }
 }

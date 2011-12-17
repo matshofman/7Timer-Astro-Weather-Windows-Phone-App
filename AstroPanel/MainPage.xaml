@@ -74,25 +74,25 @@
                         	<StackPanel Orientation="Horizontal">
 								<StackPanel Margin="0">
 									<Border BorderThickness="1" Margin="6,82,6,6" Height="64" BorderBrush="{StaticResource PhoneAccentBrush}">
-										<HyperlinkButton Content="Cloud Cover" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
+										<HyperlinkButton Content="Cloud Cover" Click="HelpCloudCover_Click" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
 									</Border>
 									<Border BorderThickness="1" Margin="6" Height="64" BorderBrush="{StaticResource PhoneAccentBrush}">
-										<HyperlinkButton Content="Seeing" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
+                                        <HyperlinkButton Content="Seeing" Click="HelpSeeing_Click" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
 									</Border>
 									<Border BorderThickness="1" Margin="6" Height="64" BorderBrush="{StaticResource PhoneAccentBrush}">
-										<HyperlinkButton Content="Transparency" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
+                                        <HyperlinkButton Content="Transparency" Click="HelpTransparency_Click" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
 									</Border>
 									<Border BorderThickness="1" Margin="6" Height="64" BorderBrush="{StaticResource PhoneAccentBrush}">
-										<HyperlinkButton Content="Temperature" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
+                                        <HyperlinkButton Content="Temperature" Click="HelpTemperature_Click" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
 									</Border>
 									<Border BorderThickness="1" Margin="6" Height="64" BorderBrush="{StaticResource PhoneAccentBrush}">
-										<HyperlinkButton Content="Humidity" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
+                                        <HyperlinkButton Content="Humidity" Click="HelpHumidity_Click" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
 									</Border>
 									<Border BorderThickness="1" Margin="6" Height="64" BorderBrush="{StaticResource PhoneAccentBrush}">
-										<HyperlinkButton Content="Precipitation" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
+                                        <HyperlinkButton Content="Precipitation" Click="HelpPrecipitation_Click" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
 									</Border>
 									<Border BorderThickness="1" Margin="6" Height="64" BorderBrush="{StaticResource PhoneAccentBrush}">
-										<HyperlinkButton Content="Wind" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
+                                        <HyperlinkButton Content="Wind" Click="HelpWind_Click" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0"/>
 									</Border>
 								</StackPanel>
 	                            <ItemsPresenter/>

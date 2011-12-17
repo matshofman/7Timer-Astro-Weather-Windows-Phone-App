@@ -1,0 +1,3 @@
+# git ignore file
+AstroPanel/Bin*
+AstroPanel/obj*
