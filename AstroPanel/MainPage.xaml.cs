@@ -58,6 +58,20 @@ namespace AstroPanel
             double longitude = e.Position.Location.Longitude;
             double altitude = e.Position.Location.Altitude;
 
+            LatitudeCoordinate.Text = Math.Abs(latitude).ToString("0.000").Replace(",", ".");
+            LongitudeCoordinate.Text = Math.Abs(longitude).ToString("0.000").Replace(",", ".");
+
+            if (latitude >= 0.0)
+                LatitudeHemisphere.Text = "N";
+            else
+                LatitudeHemisphere.Text = "S";
+
+            if (longitude >= 0.0)
+                LongitudeHemisphere.Text = "E";
+            else
+                LongitudeHemisphere.Text = "W";
+
+
             Uri url = WeatherData.GetRequestUri(latitude, longitude, altitude);
 
             WebClient client = new WebClient();
