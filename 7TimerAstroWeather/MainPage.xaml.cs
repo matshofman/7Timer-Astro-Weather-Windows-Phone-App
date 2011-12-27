@@ -126,7 +126,7 @@ namespace SevenTimerAstroWeather
         {
             if (e.Status == GeoPositionStatus.Disabled || e.Status == GeoPositionStatus.NoData)
             {
-                LoadingText.Text = "Unable to find your location";
+                LoadingText.Text = "Unable to find your location\nSet your location manualy in the settings page";
                 ProgressBar.Visibility = Visibility.Collapsed;
             }
             else if (e.Status == GeoPositionStatus.Initializing)
