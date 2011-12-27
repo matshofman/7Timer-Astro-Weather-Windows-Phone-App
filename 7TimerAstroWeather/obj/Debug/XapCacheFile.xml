@@ -1,16 +1,16 @@
-﻿<xapCache source="C:\Users\Mats\Development\7Timer-Astro-Weather\AstroPanel\Bin\Debug\7TimerAstroWeather.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="27-12-11 19:47:14">
-  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\AstroPanel\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="27-12-11 19:46:04" />
-  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\AstroPanel\Background.png" archivePath="Background.png" lastWriteTime="18-12-11 0:31:54" />
-  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\AstroPanel\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="18-12-11 0:29:59" />
-  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\AstroPanel\obj\Debug\SevenTimerAstroWeather.dll" archivePath="SevenTimerAstroWeather.dll" lastWriteTime="27-12-11 19:47:14" />
+﻿<xapCache source="C:\Users\Mats\Development\7Timer-Astro-Weather\7TimerAstroWeather\Bin\Debug\7TimerAstroWeather.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="27-12-11 20:16:10">
+  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\7TimerAstroWeather\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="27-12-11 19:46:04" />
+  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\7TimerAstroWeather\Background.png" archivePath="Background.png" lastWriteTime="18-12-11 0:31:54" />
+  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\7TimerAstroWeather\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="27-12-11 20:05:35" />
+  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\7TimerAstroWeather\obj\Debug\SevenTimerAstroWeather.dll" archivePath="SevenTimerAstroWeather.dll" lastWriteTime="27-12-11 20:16:10" />
   <file source="c:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Windows Phone\v7.1\Libraries\Microsoft.Expression.Drawing.dll" archivePath="Microsoft.Expression.Drawing.dll" lastWriteTime="17-08-11 2:48:22" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.1\Libraries\Silverlight\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="15-09-11 16:36:26" />
   <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\packages\SilverlightToolkitWP.4.2011.12.13\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll" archivePath="Microsoft.Phone.Controls.Toolkit.dll" lastWriteTime="13-12-11 20:46:34" />
   <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\packages\Newtonsoft.Json.4.0.4\lib\sl3-wp\Newtonsoft.Json.dll" archivePath="Newtonsoft.Json.dll" lastWriteTime="04-12-11 21:44:07" />
-  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\AstroPanel\icons\appbar.cancel.rest.png" archivePath="icons\appbar.cancel.rest.png" lastWriteTime="15-09-11 16:33:14" />
-  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\AstroPanel\icons\appbar.save.rest.png" archivePath="icons\appbar.save.rest.png" lastWriteTime="15-09-11 16:33:14" />
-  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\AstroPanel\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="14-12-11 23:07:40" />
-  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\AstroPanel\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="27-12-11 19:38:28" />
-  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\AstroPanel\Bin\Debug\icons\appbar.cancel.rest.png" archivePath="icons\appbar.cancel.rest.png" lastWriteTime="15-09-11 16:33:14" />
-  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\AstroPanel\Bin\Debug\icons\appbar.save.rest.png" archivePath="icons\appbar.save.rest.png" lastWriteTime="15-09-11 16:33:14" />
+  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\7TimerAstroWeather\icons\appbar.cancel.rest.png" archivePath="icons\appbar.cancel.rest.png" lastWriteTime="15-09-11 16:33:14" />
+  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\7TimerAstroWeather\icons\appbar.save.rest.png" archivePath="icons\appbar.save.rest.png" lastWriteTime="15-09-11 16:33:14" />
+  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\7TimerAstroWeather\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="14-12-11 23:07:40" />
+  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\7TimerAstroWeather\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="27-12-11 19:38:28" />
+  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\7TimerAstroWeather\Bin\Debug\icons\appbar.cancel.rest.png" archivePath="icons\appbar.cancel.rest.png" lastWriteTime="15-09-11 16:33:14" />
+  <file source="C:\Users\Mats\Development\7Timer-Astro-Weather\7TimerAstroWeather\Bin\Debug\icons\appbar.save.rest.png" archivePath="icons\appbar.save.rest.png" lastWriteTime="15-09-11 16:33:14" />
 </xapCache>
