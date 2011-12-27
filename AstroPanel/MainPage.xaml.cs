@@ -10,9 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
-using AstroPanel.Data;
 using Newtonsoft.Json;
 using System.Device.Location;
+using AstroPanel.Models;
 
 namespace AstroPanel
 {
@@ -20,43 +20,40 @@ namespace AstroPanel
     public partial class MainPage : PhoneApplicationPage
     {
         private GeoCoordinateWatcher watcher;
+        private AppSettings settings;
 
         // Constructor
         public MainPage()
         {
             InitializeComponent();
-
             SkyListBox.Visibility = Visibility.Collapsed;
+            ApplicationBar.IsVisible = true;
+            settings = new AppSettings();
 
-            watcher = new GeoCoordinateWatcher(GeoPositionAccuracy.Default); 
+            if (settings.GPSModeSetting == GPSMode.Automatic)
+            {
+                GetLocationAndWeatherData();
+            }
+            else
+            {
+                GetWeatherData();
+            }
+
+        }
+
+        private void GetLocationAndWeatherData()
+        {
+            watcher = new GeoCoordinateWatcher(GeoPositionAccuracy.Default);
             watcher.StatusChanged += new EventHandler<GeoPositionStatusChangedEventArgs>(watcher_StatusChanged);
             watcher.PositionChanged += new EventHandler<GeoPositionChangedEventArgs<GeoCoordinate>>(watcher_PositionChanged);
             watcher.Start();
-
-            ApplicationBar.IsVisible = true;
-
-        }
-        
-        void watcher_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)
-        {
-            if (e.Status == GeoPositionStatus.Disabled || e.Status == GeoPositionStatus.NoData)
-            {
-                LoadingText.Text = "Unable to find your location.";
-                ProgressBar.Visibility = System.Windows.Visibility.Collapsed;
-            }
-            else if (e.Status == GeoPositionStatus.Initializing)
-            {
-                LoadingText.Text = "Looking for your location...";
-            }
         }
 
-        void watcher_PositionChanged(object sender, GeoPositionChangedEventArgs<GeoCoordinate> e)
+        private void GetWeatherData()
         {
-            watcher.Stop();
-
-            double latitude = e.Position.Location.Latitude;
-            double longitude = e.Position.Location.Longitude;
-            double altitude = e.Position.Location.Altitude;
+            double latitude = settings.GPSLatitudeSetting;
+            double longitude = settings.GPSLongitudeSetting;
+            TemperatureUnit temperature = settings.TemperatureUnitSetting;
 
             LatitudeCoordinate.Text = Math.Abs(latitude).ToString("0.000").Replace(",", ".");
             LongitudeCoordinate.Text = Math.Abs(longitude).ToString("0.000").Replace(",", ".");
@@ -71,26 +68,55 @@ namespace AstroPanel
             else
                 LongitudeHemisphere.Text = "W";
 
+            Uri url = WeatherData.GetRequestUri(latitude, longitude, temperature);
 
-            Uri url = WeatherData.GetRequestUri(latitude, longitude, altitude);
-
-            WebClient client = new WebClient();
-            client.DownloadStringAsync(url);
-            client.DownloadStringCompleted += new DownloadStringCompletedEventHandler(DownloadCompleted);
+            WebClient webclient = new WebClient();
+            webclient.DownloadStringAsync(url);
+            webclient.DownloadStringCompleted += new DownloadStringCompletedEventHandler(webclient_DownloadStringCompleted);
 
             LoadingText.Text = "Loading weather data...";
-
         }
 
-        private void DownloadCompleted(object sender, DownloadStringCompletedEventArgs e)
+        private void watcher_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)
+        {
+            if (e.Status == GeoPositionStatus.Disabled || e.Status == GeoPositionStatus.NoData)
+            {
+                LoadingText.Text = "Unable to find your location";
+                ProgressBar.Visibility = System.Windows.Visibility.Collapsed;
+            }
+            else if (e.Status == GeoPositionStatus.Initializing)
+            {
+                LoadingText.Text = "Looking for your location...";
+            }
+        }
+
+        private void watcher_PositionChanged(object sender, GeoPositionChangedEventArgs<GeoCoordinate> e)
+        {
+            watcher.Stop();
+
+            settings.GPSLatitudeSetting = e.Position.Location.Latitude;
+            settings.GPSLongitudeSetting = e.Position.Location.Longitude;
+
+            GetWeatherData();
+        }
+
+        private void webclient_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
             if (e.Error == null)
             {
-                WeatherData weatherData = JsonConvert.DeserializeObject<WeatherData>(e.Result);
-                SkyListBox.ItemsSource = weatherData.WeatherFragments;
-                SkyListBox.Visibility = Visibility.Visible;
-                ProgressBar.Visibility = Visibility.Collapsed;
-                LoadingText.Visibility = Visibility.Collapsed;
+                try
+                {
+                    WeatherData weatherData = JsonConvert.DeserializeObject<WeatherData>(e.Result);
+                    SkyListBox.ItemsSource = weatherData.WeatherFragments;
+                    SkyListBox.Visibility = Visibility.Visible;
+                    ProgressBar.Visibility = Visibility.Collapsed;
+                    LoadingText.Visibility = Visibility.Collapsed;
+                }
+                catch (JsonSerializationException)
+                {
+                    LoadingText.Text = "Unable to get weather data for your location";
+                    ProgressBar.Visibility = System.Windows.Visibility.Collapsed;
+                }
             }
         }
 

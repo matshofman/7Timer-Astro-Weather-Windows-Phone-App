@@ -198,7 +198,7 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="False" IsMenuEnabled="True" Mode="Minimized">
             <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="Settings"/>
+                <shell:ApplicationBarMenuItem Click="Settings_Click" Text="Settings"/>
                 <shell:ApplicationBarMenuItem Click="Help_Click"  Text="Help"/>
                 <shell:ApplicationBarMenuItem Click="About_Click"  Text="About"/>
             </shell:ApplicationBar.MenuItems>

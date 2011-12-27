@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-namespace AstroPanel.Data
+namespace AstroPanel.Models
 {
     public class WindData
     {

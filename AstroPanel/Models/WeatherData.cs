@@ -13,7 +13,7 @@ using Newtonsoft.Json.Converters;
 using System.Text;
 using System.Collections.Generic;
 
-namespace AstroPanel.Data
+namespace AstroPanel.Models
 {
     public class WeatherData
     {
@@ -81,18 +81,17 @@ namespace AstroPanel.Data
             }
         }
 
-        public static Uri GetRequestUri(double latitude, double longitude, double altitude)
+        public static Uri GetRequestUri(double latitude, double longitude, TemperatureUnit temperature)
         {
             StringBuilder url = new StringBuilder();
 
             url.Append("http://www.7timer.com/v4/bin/astro.php");
             url.Append("?lat=" + latitude.ToString("0.000").Replace(",", "."));
             url.Append("&lon=" + longitude.ToString("0.000").Replace(",", "."));
-            if (altitude > 1000 && altitude < 4500)
-                url.Append("&ac=2");
-            else if (altitude > 4500)
-                url.Append("&ac=7");
-            url.Append("&unit=metric");
+            if (temperature == TemperatureUnit.C)
+                url.Append("&unit=metric");
+            else if (temperature == TemperatureUnit.F)
+                url.Append("&unit=british");
             url.Append("&output=json");
 
             return new Uri(url.ToString());

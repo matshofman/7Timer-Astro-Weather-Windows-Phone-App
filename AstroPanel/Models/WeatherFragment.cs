@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Windows;
-namespace AstroPanel.Data
+namespace AstroPanel.Models
 {
     public class WeatherFragment
     {
@@ -177,7 +177,8 @@ namespace AstroPanel.Data
         {
             get
             {
-                return Temperature + "°C";
+                AppSettings settings = new AppSettings();
+                return Temperature + "°" + settings.TemperatureUnitSetting.ToString();
             }
         }
 

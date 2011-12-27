@@ -1,3 +1,4 @@
 # git ignore file
 AstroPanel/Bin*
 AstroPanel/obj*
+AstroPanel/PreformanceLogs*

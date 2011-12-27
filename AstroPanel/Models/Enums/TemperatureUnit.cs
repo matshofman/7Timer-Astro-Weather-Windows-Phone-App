@@ -11,15 +11,9 @@ using System.Windows.Shapes;
 
 namespace AstroPanel.Models
 {
-    public enum WindDirection
+    public enum TemperatureUnit
     {
-        N,
-        NW,
-        W,
-        SW,
-        S,
-        SE,
-        E,
-        NE
+        C,
+        F
     }
 }

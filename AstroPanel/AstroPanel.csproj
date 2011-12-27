@@ -75,6 +75,9 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\AppSettings.cs" />
+    <Compile Include="Models\Enums\TemperatureUnit.cs" />
+    <Compile Include="Models\Enums\GPSMode.cs" />
     <Compile Include="Models\Enums\Precipitation.cs" />
     <Compile Include="Models\WeatherData.cs" />
     <Compile Include="Models\WeatherFragment.cs" />
@@ -120,9 +123,14 @@
     </Content>
     <Resource Include="Images\rain.png" />
     <Resource Include="Images\snow.png" />
+    <Content Include="icons\appbar.cancel.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\appbar.save.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <DesignData Include="SampleData\WeatherDataSampleData.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
