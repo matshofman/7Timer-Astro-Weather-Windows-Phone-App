@@ -13,7 +13,7 @@ using Newtonsoft.Json.Converters;
 using System.Text;
 using System.Collections.Generic;
 
-namespace AstroPanel.Models
+namespace SevenTimerAstroWeather.Models
 {
     public class WeatherData
     {

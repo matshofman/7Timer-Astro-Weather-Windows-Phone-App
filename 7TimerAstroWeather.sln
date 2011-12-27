@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroPanel", "AstroPanel\AstroPanel.csproj", "{E6CCF32E-3B1D-409A-AC10-2485DCAB2AD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7TimerAstroWeather", "AstroPanel\7TimerAstroWeather.csproj", "{E6CCF32E-3B1D-409A-AC10-2485DCAB2AD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

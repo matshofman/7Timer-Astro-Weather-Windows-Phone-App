@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Windows;
-namespace AstroPanel.Models
+namespace SevenTimerAstroWeather.Models
 {
     public class WeatherFragment
     {

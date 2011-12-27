@@ -9,7 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace AstroPanel.Models
+namespace SevenTimerAstroWeather.Models
 {
     public enum GPSMode
     {

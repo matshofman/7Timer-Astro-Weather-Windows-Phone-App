@@ -10,10 +10,11 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
-using AstroPanel.Models;
+using SevenTimerAstroWeather.Models;
 using System.Windows.Navigation;
+using System.Globalization;
 
-namespace AstroPanel
+namespace SevenTimerAstroWeather
 {
     public partial class SettingsPage : PhoneApplicationPage
     {
@@ -76,23 +77,30 @@ namespace AstroPanel
             double longitude = 0;
             bool valid = false;
 
-            try
+            if (GPSModeSwitch.IsChecked == true)
             {
-                latitude = Double.Parse(latitudeValue);
-                longitude = Double.Parse(longitudeValue);
-
-                if(latitude >= -90 && latitude <= 90 && longitude >=-180 && longitude <= 180) 
+                valid = true;
+            }
+            else
+            {
+                try
                 {
-                    valid = true;
+                    latitude = Double.Parse(latitudeValue, CultureInfo.InvariantCulture);
+                    longitude = Double.Parse(longitudeValue, CultureInfo.InvariantCulture);
+
+                    if (latitude >= -90 && latitude <= 90 && longitude >= -180 && longitude <= 180)
+                    {
+                        valid = true;
+                    }
+                    else
+                    {
+                        valid = false;
+                    }
                 }
-                else 
+                catch (Exception)
                 {
                     valid = false;
                 }
-            }
-            catch (Exception)
-            {
-                valid = false;
             }
 
             if (valid)
@@ -118,6 +126,7 @@ namespace AstroPanel
                     settings.TemperatureUnitSetting = TemperatureUnit.F;
                 }
 
+                settings.SettingsModified = true;
                 NavigationService.GoBack();
             }
             else

@@ -14,7 +14,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Windows.Threading;
 
-namespace AstroPanel
+namespace SevenTimerAstroWeather
 {
     public partial class App : Application
     {

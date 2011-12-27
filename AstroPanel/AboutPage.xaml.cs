@@ -12,7 +12,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
 
-namespace AstroPanel.Views
+namespace SevenTimerAstroWeather.Views
 {
     public partial class AboutPage : PhoneApplicationPage
     {

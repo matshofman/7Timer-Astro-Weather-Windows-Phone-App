@@ -12,34 +12,79 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Newtonsoft.Json;
 using System.Device.Location;
-using AstroPanel.Models;
+using SevenTimerAstroWeather.Models;
+using System.Windows.Navigation;
+using Microsoft.Phone.Tasks;
 
-namespace AstroPanel
+namespace SevenTimerAstroWeather
 {
 
     public partial class MainPage : PhoneApplicationPage
     {
         private GeoCoordinateWatcher watcher;
         private AppSettings settings;
+        private bool buildScreen;
 
         // Constructor
         public MainPage()
         {
             InitializeComponent();
-            SkyListBox.Visibility = Visibility.Collapsed;
             ApplicationBar.IsVisible = true;
             settings = new AppSettings();
-
-            if (settings.GPSModeSetting == GPSMode.Automatic)
-            {
-                GetLocationAndWeatherData();
-            }
-            else
-            {
-                GetWeatherData();
-            }
-
+            settings.AppStartCounterSetting++;
+            buildScreen = true;
         }
+
+        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (buildScreen)
+            {
+                ProgressBar.Visibility = Visibility.Visible;
+                LoadingText.Visibility = Visibility.Visible;
+                SkyListBox.Visibility = Visibility.Collapsed;
+
+                if (settings.GPSModeSetting == GPSMode.Automatic)
+                {
+                    GetLocationAndWeatherData();
+                }
+                else
+                {
+                    GetWeatherData();
+                }
+            }
+
+            if (settings.AppStartCounterSetting == 10)
+            {
+                MessageBoxResult result = MessageBox.Show("Thank you for using 7Timer Astro Weather for a while, would you like to review this app? If you have any feedback please send me an email (see About page) if you post it in your review I won't beable to reply to it.", "Please review this app", MessageBoxButton.OKCancel);
+                if (result == MessageBoxResult.OK)
+                {
+                    MarketplaceReviewTask marketplaceReviewTask = new MarketplaceReviewTask();
+                    marketplaceReviewTask.Show();
+                }
+                settings.AppStartCounterSetting++;
+            }
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            if (e.NavigationMode == NavigationMode.Back)
+            {
+                if (settings.SettingsModified)
+                {
+                    buildScreen = true;
+                    settings.SettingsModified = false;
+                }
+                else
+                {
+                    buildScreen = false;
+                }
+            }
+        }
+        
+
+        #region Get And Set Data / Location
 
         private void GetLocationAndWeatherData()
         {
@@ -82,7 +127,7 @@ namespace AstroPanel
             if (e.Status == GeoPositionStatus.Disabled || e.Status == GeoPositionStatus.NoData)
             {
                 LoadingText.Text = "Unable to find your location";
-                ProgressBar.Visibility = System.Windows.Visibility.Collapsed;
+                ProgressBar.Visibility = Visibility.Collapsed;
             }
             else if (e.Status == GeoPositionStatus.Initializing)
             {
@@ -119,6 +164,8 @@ namespace AstroPanel
                 }
             }
         }
+
+        #endregion
 
         #region Help Events
 
@@ -183,7 +230,7 @@ namespace AstroPanel
         private void Help_Click(object sender, EventArgs e)
         {
             string title = "Help";
-            string text = "To get an explanation about the data click on one of the row names to view it.";
+            string text = "To view a defintion for each row, click on the row name.";
             MessageBox.Show(text, title, MessageBoxButton.OK);
         }
 
@@ -193,5 +240,6 @@ namespace AstroPanel
         }
 
         #endregion
+
     }
 }

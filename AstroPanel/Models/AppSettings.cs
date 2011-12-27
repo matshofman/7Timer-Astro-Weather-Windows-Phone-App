@@ -10,7 +10,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.IO.IsolatedStorage;
 
-namespace AstroPanel.Models
+namespace SevenTimerAstroWeather.Models
 {
     public class AppSettings
     {
@@ -21,12 +21,16 @@ namespace AstroPanel.Models
         const string GPSLatitudeKeyName = "GPSLatitude";
         const string GPSLongitudeKeyName = "GPSLongitude";
         const string TempratureUnitKeyName = "TempratureUnit";
+        const string AppStartCounterKeyName = "AppStartCounter";
+        const string SettingsModifiedKeyName = "SettingsModified";
 
         // The default values
         const GPSMode GPSModeDefault = GPSMode.Automatic;
         const double GPSLatitudeDefault = 0.0;
         const double GPSLongitudeDefault = 0.0;
         const TemperatureUnit TempratureUnitDefault = TemperatureUnit.C;
+        const int AppStartCounterDefault = 0;
+        const bool SettingsModifiedDefault = false;
 
         public AppSettings()
         {
@@ -103,6 +107,30 @@ namespace AstroPanel.Models
             set
             {
                 UpdateValue(TempratureUnitKeyName, value);
+            }
+        }
+
+        public int AppStartCounterSetting
+        {
+            get
+            {
+                return GetValueOrDefault<int>(AppStartCounterKeyName, AppStartCounterDefault);
+            }
+            set
+            {
+                UpdateValue(AppStartCounterKeyName, value);
+            }
+        }
+
+        public bool SettingsModified
+        {
+            get
+            {
+                return GetValueOrDefault<bool>(SettingsModifiedKeyName, SettingsModifiedDefault);
+            }
+            set
+            {
+                UpdateValue(SettingsModifiedKeyName, value);
             }
         }
 
