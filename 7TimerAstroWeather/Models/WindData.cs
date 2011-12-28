@@ -17,14 +17,14 @@ namespace SevenTimerAstroWeather.Models
             {
                 switch (Direction)
                 {
-                    case WindDirection.N: return 0;
-                    case WindDirection.NE: return 45;
-                    case WindDirection.E: return 90;
-                    case WindDirection.SE: return 135;
-                    case WindDirection.S: return 180;
-                    case WindDirection.SW: return 225;
-                    case WindDirection.W: return 270;
-                    case WindDirection.NW: return 315;
+                    case WindDirection.N: return 180;
+                    case WindDirection.NE: return 225;
+                    case WindDirection.E: return 270;
+                    case WindDirection.SE: return 315;
+                    case WindDirection.S: return 0;
+                    case WindDirection.SW: return 45;
+                    case WindDirection.W: return 90;
+                    case WindDirection.NW: return 135;
                     default: return 0;
                 }
             }
