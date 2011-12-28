@@ -189,7 +189,7 @@
             </ListBox>
         </Grid>
         <ProgressBar x:Name="ProgressBar" IsIndeterminate="True" Grid.Row="1" VerticalAlignment="Center"/>
-        <TextBlock x:Name="LoadingText" TextWrapping="Wrap" Grid.Row="1" Style="{StaticResource PhoneTextSmallStyle}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="12,50,12,0" TextAlignment="Center"/>
+        <TextBlock x:Name="LoadingText" TextWrapping="Wrap" Grid.Row="1" Style="{StaticResource PhoneTextSmallStyle}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="12,50,12,0" TextAlignment="Center" Padding="0,400" Text="sdsaddsa"/>
         <StackPanel HorizontalAlignment="Right" Margin="0,69,8,28" Orientation="Horizontal" d:LayoutOverrides="Height">
             <StackPanel Margin="0,0,6,0">
                 <TextBlock x:Name="LatitudeCoordinate" TextWrapping="Wrap" VerticalAlignment="Top" Style="{StaticResource PhoneTextSmallStyle}" TextAlignment="Right" Margin="0"/>

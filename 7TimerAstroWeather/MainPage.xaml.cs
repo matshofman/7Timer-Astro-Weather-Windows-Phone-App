@@ -39,18 +39,7 @@ namespace SevenTimerAstroWeather
         {
             if (buildScreen)
             {
-                ProgressBar.Visibility = Visibility.Visible;
-                LoadingText.Visibility = Visibility.Visible;
-                SkyListBox.Visibility = Visibility.Collapsed;
-
-                if (settings.GPSModeSetting == GPSMode.Automatic)
-                {
-                    GetLocationAndWeatherData();
-                }
-                else
-                {
-                    GetWeatherData();
-                }
+                BuildScreen();
             }
 
             if (settings.AppStartCounterSetting == 10)
@@ -82,7 +71,23 @@ namespace SevenTimerAstroWeather
                 }
             }
         }
-        
+
+        private void BuildScreen()
+        {
+            SkyListBox.Visibility = Visibility.Collapsed;
+            ProgressBar.Visibility = Visibility.Visible;
+            LoadingText.Visibility = Visibility.Visible;
+            LoadingText.Text = "Loading weather data...";
+            
+            if (settings.GPSModeSetting == GPSMode.Automatic)
+            {
+                GetLocationAndWeatherData();
+            }
+            else
+            {
+                GetWeatherData();
+            }
+        }
 
         #region Get And Set Data / Location
 
@@ -118,8 +123,6 @@ namespace SevenTimerAstroWeather
             WebClient webclient = new WebClient();
             webclient.DownloadStringAsync(url);
             webclient.DownloadStringCompleted += new DownloadStringCompletedEventHandler(webclient_DownloadStringCompleted);
-
-            LoadingText.Text = "Loading weather data...";
         }
 
         private void watcher_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)
@@ -128,10 +131,6 @@ namespace SevenTimerAstroWeather
             {
                 LoadingText.Text = "Unable to find your location\nSet your location manualy in the settings page";
                 ProgressBar.Visibility = Visibility.Collapsed;
-            }
-            else if (e.Status == GeoPositionStatus.Initializing)
-            {
-                LoadingText.Text = "Looking for your location...";
             }
         }
 
@@ -162,6 +161,20 @@ namespace SevenTimerAstroWeather
                     LoadingText.Text = "Unable to get weather data for your location";
                     ProgressBar.Visibility = System.Windows.Visibility.Collapsed;
                 }
+            }
+            else
+            {
+                LoadingText.Text = "Unable to get weather data at the moment, the\nconnection was lost. Click here to try again.";
+                LoadingText.Tap += new EventHandler<System.Windows.Input.GestureEventArgs>(Retry_Click);
+                ProgressBar.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void Retry_Click(object sender, EventArgs e)
+        {
+            if (ProgressBar.Visibility == Visibility.Collapsed)
+            {
+                BuildScreen();
             }
         }
 
