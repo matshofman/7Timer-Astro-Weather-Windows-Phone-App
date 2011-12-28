@@ -1,4 +1,4 @@
 # git ignore file
-AstroPanel/Bin*
-AstroPanel/obj*
-AstroPanel/PreformanceLogs*
+7TimerAstroWeather/Bin*
+7TimerAstroWeather/obj*
+7TimerAstroWeather/PerformanceLogs*
