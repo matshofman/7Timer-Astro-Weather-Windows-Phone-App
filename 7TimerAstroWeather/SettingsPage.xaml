@@ -64,8 +64,10 @@
             		<RadioButton x:Name="CelciusRadioButton" Content="°C" HorizontalAlignment="Right" Margin="0,0,103,0" VerticalAlignment="Center"/>
             		<RadioButton x:Name="FahrenheitRadioButton" Content="°F" HorizontalAlignment="Right" Margin="0,0,8,0" VerticalAlignment="Center"/>
             	</Grid>
+            	<TextBlock TextWrapping="Wrap" Style="{StaticResource PhoneTextSmallStyle}"><Run Text="Location data is only used to give "/><Run Text="a location based "/><Run Text=" weather forecast. The app won't use "/><Run Text="any of your location data when turned of here"/><Run Text="."/></TextBlock>
             </StackPanel>
         </StackPanel>
+        <TextBlock HorizontalAlignment="Right" Height="3" Margin="0,0,-134,215" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Bottom" Width="2"/>
 
     </Grid>
 
