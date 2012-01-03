@@ -4,7 +4,8 @@
 About
 -------------
 7Timer ([website](http://7timer.com)) is a weather service which has a product focused on weather forecasts for astronomers including things like cloud cover, seeing and transparency. This project has no direct connection with 7Timer but only uses their API. There data has the following terms (quote from site)
-    *The weather data distributed in this site are entirely free – you have to right to use, redistribute or reproduce them without notifying me, as long as you are not using them for commercial purpose. Just be aware that weather forecasting is as challenging as in the stock market – so use these data at your own risk.*
+
+    *The weather data distributed in this site are entirely free you have to right to use, redistribute or reproduce them without notifying me, as long as you are not using them for commercial purpose. Just be aware that weather forecasting is as challenging as in the stock market so use these data at your own risk.*
 
 The App
 -------------
