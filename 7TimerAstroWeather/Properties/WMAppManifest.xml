@@ -1,13 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{f592c885-7900-41bb-b9ad-be53fb6dc7ef}" Title="7Timer Astro Weather" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Mats Hofman" Description="Sample description" Publisher="Mats Hofman">
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+  <DefaultLanguage xmlns="" code="" />
+  <Languages xmlns="">
+    <Language code="zh" />
+    <Language code="zh-Hant" />
+    <Language code="zh-MO" />
+    <Language code="zh-TW" />
+    <Language code="zh-HK" />
+    <Language code="zh-Hans" />
+    <Language code="zh-SG" />
+    <Language code="zh-CN" />
+  </Languages>
+  <App xmlns="" ProductID="{f592c885-7900-41bb-b9ad-be53fb6dc7ef}" Title="7Timer Astro Weather" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Mats Hofman" Description="Sample description" Publisher="Mats Hofman" PublisherID="{22b6a20b-bf60-415e-83e0-b0094b1f1b29}">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_GAMERSERVICES" />
       <Capability Name="ID_CAP_IDENTITY_DEVICE" />
       <Capability Name="ID_CAP_IDENTITY_USER" />
       <Capability Name="ID_CAP_LOCATION" />
-      <Capability Name="ID_CAP_MEDIALIB" />
       <Capability Name="ID_CAP_MICROPHONE" />
       <Capability Name="ID_CAP_NETWORKING" />
       <Capability Name="ID_CAP_PHONEDIALER" />
@@ -17,18 +27,32 @@
       <Capability Name="ID_CAP_ISV_CAMERA" />
       <Capability Name="ID_CAP_CONTACTS" />
       <Capability Name="ID_CAP_APPOINTMENTS" />
+      <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
+      <Capability Name="ID_CAP_MEDIALIB_PHOTO" />
+      <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
     </Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="AstroPanelToken" TaskName="_default">
-        <TemplateType5>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
+        <TemplateFlip>
+          <SmallImageURI IsResource="false" IsRelative="true">Background.png</SmallImageURI>
           <Count>0</Count>
+          <BackgroundImageURI IsResource="false" IsRelative="true">Background.png</BackgroundImageURI>
           <Title>7Timer Astro Weather</Title>
-        </TemplateType5>
+          <BackContent></BackContent>
+          <BackBackgroundImageURI></BackBackgroundImageURI>
+          <BackTitle></BackTitle>
+          <DeviceLockImageURI></DeviceLockImageURI>
+          <HasLarge>false</HasLarge>
+        </TemplateFlip>
       </PrimaryToken>
     </Tokens>
+    <ScreenResolutions>
+      <ScreenResolution Name="ID_RESOLUTION_WVGA" />
+      <ScreenResolution Name="ID_RESOLUTION_WXGA" />
+      <ScreenResolution Name="ID_RESOLUTION_HD720P" />
+    </ScreenResolutions>
   </App>
 </Deployment>
