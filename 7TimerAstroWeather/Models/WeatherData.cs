@@ -85,7 +85,7 @@ namespace SevenTimerAstroWeather.Models
         {
             StringBuilder url = new StringBuilder();
 
-            url.Append("http://www.7timer.com/v4/bin/astro.php");
+            url.Append("http://202.127.24.18/v4/bin/astro.php");
             url.Append("?lat=" + latitude.ToString("0.000").Replace(",", "."));
             url.Append("&lon=" + longitude.ToString("0.000").Replace(",", "."));
             if (temperature == TemperatureUnit.C)
